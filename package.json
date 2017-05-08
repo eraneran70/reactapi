@@ -1,0 +1,46 @@
+{
+  "name": "reactapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack -p --progress",
+    "dev": "webpack --progress --color --watch & nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "dateformat": "^2.0.0",
+    "flux": "^3.1.2",
+    "hapi": "^16.1.1",
+    "hapi-react-views": "^9.2.1",
+    "inert": "^4.2.0",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.2",
+    "object-assign": "^4.1.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "sass-loader": "^6.0.3",
+    "superagent": "^3.5.2",
+    "vision": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "css-column-span": "^1.0.7",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "ignore-styles": "^5.0.1",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "postcss-loader": "^1.3.3",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  }
+}

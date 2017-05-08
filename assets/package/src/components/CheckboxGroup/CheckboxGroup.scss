@@ -1,0 +1,158 @@
+// Stylesheet for checkbox Component
+@import '~hbc-sass-tools/tools';
+
+.checkbox-group {
+    &__label {
+        margin-bottom: 8px;
+        padding: 0;
+    }
+
+    &__fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    &__checkbox {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: $form-default-text;
+    }
+
+    &__checkbox-input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+
+        &:focus:not(:disabled) + .checkbox-group__checkbox-label:before {
+            border-color: $form-checkbox-border-selected;
+        }
+
+        &:hover:not(:disabled) + .checkbox-group__checkbox-label:before {
+            border-color: $form-default-border-hover;
+        }
+
+        &:checked + .checkbox-group__checkbox-label:before {
+            border-color: $form-checkbox-border-selected;
+            background-color: $form-checkbox-background-selected;
+        }
+
+        &:checked + .checkbox-group__checkbox-label:after {
+            position: absolute;
+            top: 0;
+            left: 4px;
+
+            background-color: transparent;
+            color: $form-checkbox-check;
+            font-family: hbc-icons;
+            content: '\e925';
+            @include rem(font-size, 10px);
+        }
+    }
+
+    &__checkbox-label {
+        display: inline-block;
+        position: relative;
+        padding: 0 0 0 30px;
+
+        color: $form-default-text;
+        cursor: pointer;
+        vertical-align: bottom;
+        @include rem(line-height, rhythm(1));
+
+        &:before {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            width: 18px;
+            transition: border 200ms ease;
+            border: 1px solid $form-checkbox-border-default;
+            border-radius: 0;
+
+            background-color: $form-default-background;
+            box-shadow: none;
+            content: '';
+            vertical-align: bottom;
+            @include rem(height, rhythm(1));
+        }
+    }
+
+    &--inline {
+        .checkbox-group__checkbox {
+            margin-right: 24px;
+        }
+
+        .checkbox-group__error-message {
+            margin-top: 8px;
+        }
+    }
+
+    &--stacked {
+        .checkbox-group__checkbox {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group__error-message {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.checkbox-group {
+    &__error-message {
+        display: block;
+        padding: 0 11px;
+
+        color: $form-error-text;
+        @include adjust-leading-to(1.5);
+    }
+
+    &--with-error {
+        .checkbox-group__checkbox-label:before {
+            border-color: $form-error-border;
+        }
+
+        .checkbox-group__checkbox-input:hover + .checkbox-group__checkbox-label:before {
+            border-color: $form-error-border;
+        }
+    }
+}
+
+.checkbox-group {
+    &--disabled {
+        .checkbox-group__checkbox-label {
+            color: $form-disabled-text;
+        }
+
+        .checkbox-group__checkbox-label:after,
+        .checkbox-group__checkbox-input:checked + .checkbox-group__checkbox-label:after {
+            color: $form-checkbox-check-disabled;
+        }
+
+        .checkbox-group__checkbox-label:before,
+        .checkbox-group__checkbox-input:checked + .checkbox-group__checkbox-label:before {
+            border-color: $form-disabled-border;
+            background-color: $form-disabled-background;
+        }
+    }
+
+    &__checkbox {
+        &--disabled {
+            .checkbox-group__checkbox-label {
+                color: $form-disabled-text;
+            }
+
+            .checkbox-group__checkbox-label:after,
+            .checkbox-group__checkbox-input:checked + .checkbox-group__checkbox-label:after {
+                color: $form-checkbox-check-disabled;
+            }
+
+            .checkbox-group__checkbox-label:before,
+            .checkbox-group__checkbox-input:checked + .checkbox-group__checkbox-label:before {
+                border-color: $form-checkbox-border-disabled;
+                background-color: $form-disabled-background;
+            }
+        }
+    }
+}

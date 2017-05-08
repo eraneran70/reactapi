@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <link rel="stylesheet" href="jsoneditor.css"/>
+
+    <title>Flexi JSON Editor and Inspector</title>
+
+    <style>
+        body {
+          padding: 0 70px;
+        }
+        #json {
+          margin: 10px 10px 10px 32px;
+          width: 50%;
+          min-height: 70px;
+        }
+        h1 {
+          font-family: Arial;
+          color: #EBBC6E;
+          text-align: center;
+          text-shadow: 1px 1px 1px black;
+          border-bottom: 1px solid gray;
+          padding-bottom: 50px;
+          width: 500px;
+          margin: 20px auto;
+        }
+        h1 img {
+          float: left;
+        }
+        h1 b {
+          color: black;
+          font-weight: normal;
+          display: block;
+          font-size: 12px;
+          text-shadow: none;
+        }
+
+        #legend {
+          display: inline;
+          margin-left: 30px;
+        }
+        #legend h2 {
+           display: inline;
+           font-size: 18px;
+           margin-right: 20px;
+        }
+        #legend a {
+          color: white;
+          margin-right: 20px;
+        }
+        #legend span {
+          padding: 2px 4px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          color: white;
+          font-weight: bold;
+          text-shadow: 1px 1px 1px black;
+          background-color: black;
+        }
+        #legend .string  { background-color: #009408; }
+        #legend .array   { background-color: #2D5B89; }
+        #legend .object  { background-color: #E17000; }
+        #legend .number  { background-color: #497B8D; }
+        #legend .boolean { background-color: #B1C639; }
+        #legend .null    { background-color: #B1C639; }
+
+        #expander {
+          cursor: pointer;
+          margin-right: 20px;
+        }
+
+        #footer {
+          font-size: 13px;
+        }
+
+        #rest {
+          margin: 20px 0 20px 30px;
+        }
+        #rest label {
+          font-weight: bold;
+        }
+        #rest-callback {
+          width: 70px;
+        }
+        #rest-url {
+          width: 700px;
+        }
+        label[for="json"] {
+          margin-left: 30px;
+          display: block;
+        }
+        #json-note {
+          margin-left: 30px;
+          font-size: 12px;
+        }
+
+        .addthis_toolbox {
+          position: relative;
+          top: -10px;
+          margin-left: 30px;
+        }
+
+        .btn-primary {
+            gn-items: flex-start;
+            background-color: rgb(0, 109, 204);
+            background-image: linear-gradient(rgb(0, 136, 204), rgb(0, 68, 204));
+            border-bottom-color: rgba(0, 0, 0, 0.247059);
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-image-outset: 0px;
+            border-image-repeat: stretch;
+            border-image-slice:100%;
+            border-left-color: rgba(0, 0, 0, 0.0980392);
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-right-color: rgba(0, 0, 0, 0.0980392);
+            border-right-style: solid;
+            border-right-width: 1px;
+            border-top-color: rgba(0, 0, 0, 0.0980392);
+            border-radius: 4px;
+            border-top-style: solid;
+            border-top-width: 1px;
+            box-sizing: border-box;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: inline-block;
+            font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size:14px;
+            height: 30px;
+            line-height: 20px;
+            padding-bottom: 4px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-top: 4px;
+            text-align: center;
+            text-indent: 0px;
+            text-rendering: auto;
+            text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+            text-size-adjust: 100%;
+            vertical-align: middle;
+            width: 100px;
+            word-spacing: 0px;
+            writing-mode: horizontal-tb;
+        }
+
+        #preview {
+              border: 1px solid grey;
+          }
+
+        #preview object {
+            width: 100%;
+            min-height: 250px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-5029684-7']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+</head>
+
+<body>
+   
+    <div id="preview"></div>
+
+    <h3>Editor</h3>
+        <button class="btn btn-primary" id="setjson">Load JSON</button>
+        <button class="btn btn-primary" id="savejson" type="submit">Save JSON</button>
+        <button class="btn btn-primary" id="previewjson" >preview</button>
+
+    <div id="editor" class="json-editor"></div>
+
+    <label for="json">Or paste JSON directly here:</label>
+    <p id="json-note">Note that you can edit your JSON directly in the textarea below.
+        The JSON viewer will get updated when you leave the field.</p>
+    <textarea id="json"></textarea><br/>
+
+    <script src="json2.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.jsoneditor.js"></script>
+    <script src="jsoneditor1.js"></script>
+    <script src="FileSaver.min.js"></script>
+
+    <script>
+        var $load_json_button = document.getElementById('setjson');
+        var $set_value_button = document.getElementById('setvalue');
+        var $save_json_button = document.getElementById('savejson');
+        var $preview_json_button = document.getElementById('previewjson');
+
+        $load_json_button.addEventListener('click',function() {
+           $.ajax({
+                    url : "views/data.json",
+                    dataType: "text",
+                    success : function (data) {
+                        $('textarea').val(data).change();
+                }
+            });
+        });
+
+        $save_json_button.addEventListener('click',function() {
+          var dataEdited = $('textarea').val();
+          var blob = new Blob([dataEdited], {type: "text/plain;charset=utf-8"});
+          saveAs(blob, "data.json");
+        });
+
+        $preview_json_button.addEventListener('click',function() {
+            document.getElementById("preview").innerHTML='<object type="text/html" data="http://localhost:3000/index.html" ></object>';
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+@import '~hbc-sass-tools/tools';
+
+$tooltip-background-color: $white;
+$tooltip-margin: 15px;
+$tooltip-padding: 15px 19px;
+$tooltip-border-color: $brand-primary;
+$tooltip-stem-size: 20px;
+
+.tooltip {
+    display: block;
+    position: absolute;
+    padding: $tooltip-padding;
+    transform: translateY(10px);
+    transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+    border: 1px solid $tooltip-border-color;
+    background-color: $tooltip-background-color;
+    box-shadow: rgba(100, 100, 100, 0.1) 2px 2px 3px;
+    opacity: 0;
+    z-index: $zindex-tooltip;
+    pointer-events: none;
+
+    &--close-icon {
+        position: relative;
+        top: -10px;
+        left: 9px;
+        max-height: 100%;
+        padding-left: 5px;
+        float: right;
+        color: $ui-control-color;
+
+        &:hover {
+            color: $ui-control-color-hover;
+            cursor: pointer;
+        }
+    }
+
+    &--content {
+        float: left;
+        @include clearfix();
+    }
+}
+
+.tooltip--enter {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+// Stems
+// Stems are a nice way to show where the tooltip came from.
+
+.tooltip--horizontal {
+
+    &.tooltip--top {
+        margin-top: $tooltip-margin;
+
+        &:before {
+            content: '';
+            @include absolute($top: negate($tooltip-stem-size + 1px));
+            @include triangle($tooltip-stem-size, $tooltip-border-color, up);
+        }
+
+        &:after {
+            content: '';
+            @include absolute($top: negate($tooltip-stem-size));
+            @include triangle($tooltip-stem-size, $tooltip-background-color, up);
+        }
+
+        &.tooltip--left:before,
+        &.tooltip--left:after {
+            left: 15px;
+        }
+
+        &.tooltip--center:before,
+        &.tooltip--center:after {
+            left: 50%;
+            margin-left: negate($tooltip-stem-size/2);
+        }
+
+        &.tooltip--right:before,
+        &.tooltip--right:after {
+            right: 15px;
+        }
+    }
+
+    &.tooltip--bottom {
+        margin-top: negate($tooltip-margin);
+
+        &:before {
+            content: '';
+            @include absolute($bottom: negate($tooltip-stem-size + 1px));
+            @include triangle($tooltip-stem-size, $tooltip-border-color, down);
+        }
+
+        &:after {
+            content: '';
+            @include absolute($bottom: negate($tooltip-stem-size));
+            @include triangle($tooltip-stem-size, $tooltip-background-color, down);
+        }
+
+        &.tooltip--left:before,
+        &.tooltip--left:after {
+            left: 15px;
+        }
+
+        &.tooltip--center:before,
+        &.tooltip--center:after {
+            left: 50%;
+            margin-left: negate($tooltip-stem-size/2);
+        }
+
+        &.tooltip--right:before,
+        &.tooltip--right:after {
+            right: 15px;
+        }
+    }
+}
+
+.tooltip--vertical {
+
+    &.tooltip--left {
+        margin-left: $tooltip-margin;
+
+        &:before {
+            content: '';
+            @include absolute($left: negate($tooltip-stem-size + 1px));
+            @include triangle($tooltip-stem-size, $tooltip-border-color, left);
+        }
+
+        &:after {
+            content: '';
+            @include absolute($left: negate($tooltip-stem-size));
+            @include triangle($tooltip-stem-size, $tooltip-background-color, left);
+        }
+
+        &.tooltip--top:before,
+        &.tooltip--top:after {
+            top: 15px;
+        }
+
+        &.tooltip--middle:before,
+        &.tooltip--middle:after {
+            top: 50%;
+            margin-top: negate($tooltip-stem-size/2);
+        }
+
+        &.tooltip--bottom:before,
+        &.tooltip--bottom:after {
+            bottom: 15px;
+        }
+    }
+
+    &.tooltip--right {
+        margin-left: negate($tooltip-margin);
+
+        &:before {
+            content: '';
+            @include absolute($right: negate($tooltip-stem-size + 1px));
+            @include triangle($tooltip-stem-size, $tooltip-border-color, right);
+        }
+
+        &:after {
+            content: '';
+            @include absolute($right: negate($tooltip-stem-size));
+            @include triangle($tooltip-stem-size, $tooltip-background-color, right);
+        }
+
+        &.tooltip--top:before,
+        &.tooltip--top:after {
+            top: 15px;
+        }
+
+        &.tooltip--middle:before,
+        &.tooltip--middle:after {
+            top: 50%;
+            margin-top: negate($tooltip-stem-size/2);
+        }
+
+        &.tooltip--bottom:before,
+        &.tooltip--bottom:after {
+            bottom: 15px;
+        }
+    }
+}

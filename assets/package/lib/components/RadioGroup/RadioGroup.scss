@@ -1,0 +1,127 @@
+// Stylesheet for radio-group Component
+@import '~hbc-sass-tools/tools';
+
+.radiogroup {
+    &__label {
+        margin-bottom: 8px;
+        padding: 0;
+    }
+
+    &__fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+    }
+
+    &__radio {
+        cursor: pointer;
+    }
+
+    &__radio-label {
+        vertical-align: middle;
+    }
+
+    &__radio-input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    &__radio-input + &__radio-button {
+        @include rem(height, rhythm(1));
+        display: inline-block;
+        position: relative;
+        width: 18px;
+        margin: 0 12px 0 0;
+        transition: border-color 0.25s;
+        border: 1px solid $form-radio-border-default;
+        border-radius: 50%;
+        vertical-align: middle;
+
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            margin: auto;
+            transform: scale(0.25);
+            transition: all 0.3s cubic-bezier(0, 1.07, 0.64, 1.18);
+            border-radius: 50%;
+            background-color: $form-radio-dot;
+            content: '';
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__radio-input:checked + &__radio-button {
+        border-color: $form-radio-border-selected;
+        background-color: $form-radio-background-selected;
+
+        &:after {
+            transform: scale(1);
+            color: $form-radio-dot;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__radio-input:focus + &__radio-button {
+        border-color: $form-radio-border-selected;
+    }
+
+    &__radio:hover &__radio-button {
+        border-color: $form-default-border-hover;
+    }
+
+    &--inline {
+        .radiogroup__radio {
+            margin-right: 32px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &--stacked {
+        .radiogroup__radio {
+            display: block;
+            margin-bottom: 8px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.radiogroup {
+    &__error-message {
+        @include adjust-leading-to(1.5);
+        display: block;
+        padding: 0 11px;
+        color: $form-error-text;
+    }
+}
+
+.radiogroup {
+    &__radio--disabled {
+        cursor: default;
+
+        &:hover .radiogroup__radio-button {
+            border-color: $form-radio-border-disabled;
+        }
+
+        .radiogroup__radio-button {
+            background-color: $form-radio-background-disabled;
+        }
+
+        .radiogroup__radio-label {
+            color: $form-disabled-text;
+        }
+    }
+}

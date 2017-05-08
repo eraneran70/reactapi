@@ -1,0 +1,22 @@
+@import '~hbc-sass-tools/tools';
+@import '~hbc-sass-tools/base/icons'; // Use the master icon list
+
+@font-face {
+    font-family: 'hbc-icons';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./fonts/hbc-icons.woff') format('woff');
+}
+
+.hbc-icon {
+    @include icon-base('hbc-icons');
+}
+
+// Loop through the list of available icons and build class selectors for each of them.
+@each $name, $icon in $icon-font-map {
+    .hbc-icon--#{$name}:before {
+        // Fix parsing issue in node sass
+        // @source https://github.com/sass/sass/issues/659
+        content: #{"\"\\"}#{$icon + "\""};
+    }
+}

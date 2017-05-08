@@ -1,0 +1,185 @@
+{
+    "properties": {
+        "contact_info": {
+            "id": "/properties/contact_info",
+            "properties": {
+                "heading": {
+                    "id": "/properties/contact_info/properties/heading",
+                    "type": "string"
+                },
+                "links": {
+                    "id": "/properties/contact_info/properties/links",
+                    "items": {
+                        "id": "/properties/contact_info/properties/links/items",
+                        "properties": {
+                            "desktop_label": {
+                                "id": "/properties/contact_info/properties/links/items/properties/desktop_label",
+                                "type": "string"
+                            },
+                            "hide_on_desktop": {
+                                "id": "/properties/contact_info/properties/links/items/properties/hide_on_desktop",
+                                "type": "boolean"
+                            },
+                            "hide_on_mobile": {
+                                "id": "/properties/contact_info/properties/links/items/properties/hide_on_mobile",
+                                "type": "boolean"
+                            },
+                            "link_target": {
+                                "id": "/properties/contact_info/properties/links/items/properties/link_target",
+                                "type": "string"
+                            },
+                            "link_url": {
+                                "id": "/properties/contact_info/properties/links/items/properties/link_url",
+                                "type": "string"
+                            },
+                            "mobile_label": {
+                                "id": "/properties/contact_info/properties/links/items/properties/mobile_label",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "copyright": {
+            "id": "/properties/copyright",
+            "properties": {
+                "copyright_links": {
+                    "id": "/properties/copyright/properties/copyright_links",
+                    "items": {
+                        "id": "/properties/copyright/properties/copyright_links/items",
+                        "properties": {
+                            "link_label": {
+                                "id": "/properties/copyright/properties/copyright_links/items/properties/link_label",
+                                "type": "string"
+                            },
+                            "link_target": {
+                                "id": "/properties/copyright/properties/copyright_links/items/properties/link_target",
+                                "type": "string"
+                            },
+                            "link_url": {
+                                "id": "/properties/copyright/properties/copyright_links/items/properties/link_url",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "copyright_text": {
+                    "id": "/properties/copyright/properties/copyright_text",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "external_links": {
+            "id": "/properties/external_links",
+            "properties": {
+                "full_site_link": {
+                    "id": "/properties/external_links/properties/full_site_link",
+                    "properties": {
+                        "link_label": {
+                            "id": "/properties/external_links/properties/full_site_link/properties/link_label",
+                            "type": "string"
+                        },
+                        "link_url": {
+                            "id": "/properties/external_links/properties/full_site_link/properties/link_url",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "networks": {
+                    "id": "/properties/external_links/properties/networks",
+                    "items": {
+                        "id": "/properties/external_links/properties/networks/items",
+                        "properties": {
+                            "icon": {
+                                "id": "/properties/external_links/properties/networks/items/properties/icon",
+                                "type": "string"
+                            },
+                            "link_label": {
+                                "id": "/properties/external_links/properties/networks/items/properties/link_label",
+                                "type": "string"
+                            },
+                            "link_url": {
+                                "id": "/properties/external_links/properties/networks/items/properties/link_url",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "others": {
+                    "id": "/properties/external_links/properties/others",
+                    "items": {
+                        "id": "/properties/external_links/properties/others/items",
+                        "properties": {
+                            "link_label": {
+                                "id": "/properties/external_links/properties/others/items/properties/link_label",
+                                "type": "string"
+                            },
+                            "link_url": {
+                                "id": "/properties/external_links/properties/others/items/properties/link_url",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "site_map": {
+            "id": "/properties/site_map",
+            "items": {
+                "id": "/properties/site_map/items",
+                "properties": {
+                    "heading": {
+                        "id": "/properties/site_map/items/properties/heading",
+                        "type": "string"
+                    },
+                    "links": {
+                        "id": "/properties/site_map/items/properties/links",
+                        "items": {
+                            "id": "/properties/site_map/items/properties/links/items",
+                            "properties": {
+                                "hide_on_desktop": {
+                                    "id": "/properties/site_map/items/properties/links/items/properties/hide_on_desktop",
+                                    "type": "boolean"
+                                },
+                                "hide_on_mobile": {
+                                    "id": "/properties/site_map/items/properties/links/items/properties/hide_on_mobile",
+                                    "type": "boolean"
+                                },
+                                "label": {
+                                    "id": "/properties/site_map/items/properties/links/items/properties/label",
+                                    "type": "string"
+                                },
+                                "link_target": {
+                                    "id": "/properties/site_map/items/properties/links/items/properties/link_target",
+                                    "type": "string"
+                                },
+                                "link_url": {
+                                    "id": "/properties/site_map/items/properties/links/items/properties/link_url",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            },
+            "type": "array"
+        }
+    },
+    "type": "object"
+}

@@ -1,0 +1,195 @@
+﻿{
+  "site_map": [
+    {
+      "links": [
+        {
+          "hide_on_desktop": true,
+          "hide_on_mobile": false,
+          "link_target": "_self",
+          "link_url": "http://www.saksfifthavenue.com/trendcaster?bmUID=kRLqUPg",
+          "label": "The TrendCaster"
+        },
+        {
+          "hide_on_desktop": false,
+          "hide_on_mobile": true,
+          "link_target": "_blank",
+          "link_url": "http://www.saksfifthavenue.com/cqc/select_catalog.jsp?bmUID=kRLqUPk",
+          "label": "Catalogs"
+        }
+      ],
+      "heading": "Shop Saks"
+    },
+    {
+      "links": [
+        {
+          "hide_on_desktop": false,
+          "hide_on_mobile": true,
+          "link_target": "_self",
+          "link_url": "http://www.saksfifthavenue.com/About-Us",
+          "label": "About Us"
+        },
+        {
+          "hide_on_desktop": false,
+          "link_target": "_blank",
+          "link_url": "http://www.careersatsaks.com/",
+          "label": "Careers"
+        }
+      ],
+      "heading": "Stores & Corporate"
+    },
+    {
+      "links": [
+        {
+          "hide_on_desktop": false,
+          "hide_on_mobile": true,
+          "link_target": "_blank",
+          "link_url": "http://www.saksfifthavenue.com/Shipping-Returns-Taxes",
+          "label": "Domestic"
+        },
+        {
+          "hide_on_desktop": false,
+          "link_target": "_self",
+          "link_url": "http://www.saksfifthavenue.com/International",
+          "label": "International"
+        }
+      ],
+      "heading": "Shipping & Returns"
+    },
+    {
+      "links": [
+        {
+          "hide_on_desktop": false,
+          "hide_on_mobile": true,
+          "link_target": "_blank",
+          "link_url": "http://www.saksfifthavenue.com/SaksFirst",
+          "label": "SaksFirst"
+        },
+        {
+          "hide_on_desktop": false,
+          "link_target": "_self",
+          "link_url": "https://www.esnapw.com/rses/ESnapServlet?MerchantNumberSent=00979",
+          "label": "Apply"
+        }
+      ],
+      "heading": "SaksFirst Card"
+    }
+  ],
+  "contact_info": {
+    "heading": "We're here to help",
+    "links": [
+      {
+        "hide_on_desktop": false,
+        "hide_on_mobile": true,
+        "link_target": "newTab",
+        "link_url": "http://www.saksfifthavenue.com/Customer-Service",
+        "desktop_label": "Customer Service",
+        "mobile_label": "Customer Service"
+      },
+      {
+        "hide_on_desktop": false,
+        "hide_on_mobile": false,
+        "link_target": "_self",
+        "link_url": "tel:18775517257",
+        "desktop_label": "1.877.551.7257",
+        "mobile_label": "Call"
+      },
+      {
+        "hide_on_desktop": false,
+        "hide_on_mobile": false,
+        "link_target": "_self",
+        "link_url": "https://www.saksfifthavenue.com/html/email_popup/email_collect_popup_main.jsp?bmForm=email_updates_form_one1&bmFormID=kRL2pDM&bmUID=kRL2pDN&bmIsForm=true&bmPrevTemplate=%2Fmain%2Fcollection.jsp&bmText=EmailUpdateString&EmailUpdateString=hello&bmHidden=prp13&prp13=b5&bmHidden=v46&v46=go&email_updates_form_one_save=#",
+        "desktop_label": "Email"
+      },
+      {
+        "hide_on_desktop": false,
+        "hide_on_mobile": true,
+        "link_target": "_self",
+        "link_url": "http://saks.com",
+        "desktop_label": "Chat"
+      }
+    ]
+  },
+  "external_links": {
+    "others": [
+      {
+        "link_label": "Download the Saks App",
+        "link_url": "http://www.saksfifthavenue.com/Promo/iPad/Index.jsp"
+      },
+      {
+        "link_label": "Sign up for SMS",
+        "link_target": "_self",
+        "link_url": "http://www.saksfifthavenue.com/main/SMS.jsp"
+      },
+      {
+        "link_label": "Shop Saks.com",
+        "link_url": "http://www.saksfifthavenue.com/"
+      }
+    ],
+    "networks": [
+      {
+        "icon": "instagram",
+        "link_label": "Follow us on Instagram",
+        "link_url": "http://instagram.com/saks"
+      },
+      {
+        "icon": "facebook",
+        "link_label": "Follow us on Facebook",
+        "link_url": "http://www.facebook.com/saks"
+      },
+      {
+        "icon": "pinterest",
+        "link_label": "Follow us on Pinterest",
+        "link_url": "http://pinterest.com/saks"
+      },
+      {
+        "icon": "twitter",
+        "link_label": "Follow us on Twitter",
+        "link_url": "https://twitter.com/saks"
+      },
+      {
+        "icon": "vine",
+        "link_label": "Follow us on Vine",
+        "link_url": "https://vine.co/saks"
+      },
+      {
+        "icon": "tumblr",
+        "link_label": "Follow us on Tumblr",
+        "link_url": "http://10022-shoe.tumblr.com/"
+      },
+      {
+        "icon": "youtube",
+        "link_label": "Follow us on YouTube",
+        "link_url": "http://www.youtube.com/user/sakscom"
+      },
+      {
+        "icon": "google-plus",
+        "link_label": "Follow us on Google Plus",
+        "link_url": "https://plus.google.com/u/0/+Saks/"
+      },
+      {
+        "icon": "wanelo",
+        "link_label": "Follow us on Wanelo",
+        "link_url": "http://wanelo.com/saks"
+      },
+      {
+        "link_text": "POV",
+        "link_label": "Follow us on POV",
+        "link_url": "http://www.sakspov.com/"
+      }
+    ],
+    "full_site_link": {
+      "link_label": "View Full Site",
+      "link_url": "/?website=true"
+    }
+  },
+  "copyright": {
+    "copyright_text": "© 2016, Saks Fifth Avenue OFF 5TH",
+    "copyright_links": [
+      {
+        "link_label": "CA Transparency in Supply Chains Act",
+        "link_url": "http://yahoo.com",
+        "link_target": "_self"
+      }
+    ]
+  }
+}

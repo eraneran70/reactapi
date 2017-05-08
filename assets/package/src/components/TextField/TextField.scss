@@ -1,0 +1,104 @@
+@import '~hbc-sass-tools/tools';
+
+.text-field {
+    position: relative;
+    @include type-scale(base);
+
+    &__control {
+        width: 100%;
+        padding: 0 11px;
+        border: 1px solid $form-default-border;
+        border-radius: $form-border-radius;
+        outline: none;
+        box-shadow: none;
+        appearance: none;
+        @include rem(height, rhythm(2));
+        @include type-scale(base, 2);
+
+        &:focus {
+            border-color: $form-default-border-focus;
+        }
+
+        &:hover {
+            border-color: $form-default-border-hover;
+        }
+    }
+
+    &__label,
+    &__heading-label {
+        position: absolute;
+        left: 12px;
+        padding: 0 6px;
+        background-color: $background-color-primary;
+        color: $typography-color-default;
+        pointer-events: none;
+        @include rem(top, negate(rhythm(lines-for-font-size(10px))/2));
+        @include type-scale(sub);
+    }
+
+    &__label {
+        transform: translate(0);
+        transition-duration: 0.25s;
+        transition-property: transform, font-size, padding, background-color;
+        transition-timing-function: ease-out;
+    }
+
+    &__heading-label {
+        transition: opacity 0.25s, visibility 0.25s;
+        @include type-scale(sub);
+        color: $form-default-border;
+
+        &--hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &--invalid {
+            color: $form-error-text;
+        }
+    }
+
+    &__error-message {
+        display: block;
+        padding: 0 11px;
+        color: $form-error-text;
+        @include adjust-leading-to(1.5);
+    }
+
+    &--invalid {
+
+        .text-field__control {
+            border-color: $form-error-border;
+        }
+
+        &.text-field--focused,
+        &:not(.text-field--empty) {
+
+            .text-field__label {
+                color: $form-error-text;
+            }
+        }
+    }
+
+    &--empty {
+
+        &:not(.text-field--focused) {
+
+            .text-field__label {
+                padding: 0;
+                transform: translate(0, 100%);
+                background-color: transparent;
+                color: $typography-color-secondary;
+                @include adjust-font-size-to(12px);
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+
+    &__wrapper:hover &__heading-label {
+        color: $form-default-border-hover;
+    }
+}

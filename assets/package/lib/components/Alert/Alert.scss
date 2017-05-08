@@ -1,0 +1,76 @@
+@import '~hbc-sass-tools/tools';
+
+@mixin alert-variant ($color, $background, $border) {
+    border-color: $border;
+    background-color: $background;
+    color: $color;
+}
+
+.alert {
+    padding: 17px;
+    border: 1px solid transparent;
+    border-radius: 0;
+
+    text-align: center;
+
+    // Improve alignment and spacing of inner content
+    > p,
+    > ul {
+        margin-bottom: 0;
+    }
+
+    > p + p {
+        @include margin-leader();
+    }
+}
+
+.alert--success {
+    @include alert-variant($alert-success-text, $alert-success-background, $alert-success-border);
+}
+
+.alert--info {
+    @include alert-variant($alert-info-text, $alert-info-background, $alert-info-border);
+}
+
+.alert--warning {
+    @include alert-variant($alert-warning-text, $alert-warning-background, $alert-warning-border);
+}
+
+.alert--danger {
+    @include alert-variant($alert-danger-text, $alert-danger-background, $alert-danger-border);
+}
+
+.alert--dismissible {
+    padding-right: 26px;
+}
+
+.alert__close {
+    position: relative;
+    top: -2px;
+    right: -10px;
+
+    padding: 0;
+    float: right;
+    border: 0;
+
+    background: 0;
+    color: inherit;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+    opacity: 0.2;
+    appearance: none;
+    @include adjust-font-size-to(16px);
+
+    &:hover {
+        opacity: 0.5;
+    }
+
+    &:-moz-focusring {
+        outline-color: rgba(0, 0, 0, 0.85);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

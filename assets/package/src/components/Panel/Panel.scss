@@ -1,0 +1,80 @@
+@import '~hbc-sass-tools/tools';
+
+.panel {
+    @include span(full nest);
+
+    &__icon {
+        position: absolute;
+        right: 0;
+        transform: rotate(0deg);
+        transition: transform 300ms ease;
+        color: $ui-control-color;
+
+        &:hover {
+            color: $ui-control-color-hover;
+        }
+
+        &--expanded {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__header {
+        display: block;
+        text-decoration: none;
+        user-select: none;
+        @include span(full);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__content-outer {
+        overflow: hidden;
+        transition: height 300ms ease;
+        @include span(full nest);
+
+        &--expanded {
+            overflow: visible;
+        }
+
+        &:last-child {
+            .panel__content-inner {
+                @include rem(padding-bottom, rhythm(1, $offset: 1px));
+            }
+        }
+    }
+
+    &__content-inner {
+        @include rem(padding-bottom, rhythm(1));
+        @include span(full nest);
+
+        &--without-header {
+            @include rem(padding-top, rhythm(1));
+        }
+    }
+
+    &__footer {
+        border-top: 1px solid $border-color-default;
+        background-color: $brand-tertiary;
+        @include rem(padding-top, rhythm(1, $offset: 1px));
+        @include rem(padding-bottom, rhythm(1, $offset: 1px));
+    }
+
+    &__title {
+        position: relative;
+        @include rem(padding-top, rhythm(1, $offset: 1px));
+        @include rem(padding-bottom, rhythm(1, $offset: 1px));
+        @include rem(border-top, 1px solid $border-color-default);
+        @include type-scale(text-6);
+    }
+
+    &__tail {
+        @include span(full);
+        padding-left: 0;
+        padding-right: 0;
+
+        &-separator {
+            @include rem(border-bottom, 1px solid $border-color-default);
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "presets": ["hbcdigital"],
+    "env": {
+        "test": {
+            "plugins": ["istanbul"]
+        }
+    }
+}

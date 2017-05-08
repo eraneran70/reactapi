@@ -1,0 +1,53 @@
+@import '~hbc-sass-tools/tools';
+
+$title-underline-width: 178px;
+
+.card {
+    @include rem(border, 1px solid $border-color-default);
+
+    &__inner {
+        color: $typography-color-default;
+        text-align: center;
+    }
+
+    &__title {
+        display: inline-block;
+        position: relative;
+        @include rem(padding, rhythm(1));
+        @include rhythm-margins();
+
+        &:after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: $title-underline-width;
+            margin-left: -($title-underline-width / 2);
+            border-bottom: 1px solid $border-color-secondary;
+            content: '';
+        }
+    }
+
+    &__body-copy {
+        padding: 0 120px;
+    }
+
+    &--default {
+        @include rem(height, rhythm(14));
+    }
+
+    &--tall {
+        @include rem(height, rhythm(18));
+    }
+
+    @include susy-breakpoint($breakpoint-medium-down) {
+        &__body-copy {
+            padding: 0 80px;
+        }
+    }
+
+    @include susy-breakpoint($breakpoint-small, $layout-small) {
+        &__body-copy {
+            padding: 0 40px;
+        }
+    }
+}

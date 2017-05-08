@@ -1,0 +1,80 @@
+@import '~hbc-sass-tools/tools';
+
+.drop-down-list {
+    position: relative;
+    @include ff-select-dropdowns();
+
+    &__select {
+        width: 100%;
+        // workaround for FF version < 35.00
+        width: -moz-calc(100% + 3em);
+        width: calc(100% + em);
+        padding: 0 12px;
+        border: 1px solid $form-default-border;
+        border-radius: 0;
+
+        outline: none;
+        background-color: $form-default-background;
+        color: $form-default-text;
+        appearance: none;
+
+        @include type-scale(base);
+        @include rem(height, rhythm(2));
+
+        &--default {
+            border-color: $form-default-border;
+            color: $form-default-text;
+        }
+
+        &:focus {
+            border-color: $form-default-border-focus;
+        }
+
+        &:hover {
+            border-color: $form-default-border-hover;
+        }
+
+        &:disabled {
+            border-color: $form-disabled-border;
+            background-color: $form-disabled-background;
+        }
+
+        // Remove native dropdown arrow on IE10+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    &__error-message {
+        display: block;
+        padding: 0 11px;
+
+        @include adjust-leading-to(1.5);
+        color: $form-error-text;
+    }
+
+    .hbc-icon {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+
+        pointer-events: none;
+    }
+
+    &--disabled {
+        .hbc-icon,
+        .drop-down-list__select--default {
+            color: $form-disabled-text;
+        }
+    }
+
+    &--error {
+        .drop-down-list__select {
+            border-color: $form-error-text;
+        }
+
+        .hbc-icon {
+            color: $form-error-text;
+        }
+    }
+}

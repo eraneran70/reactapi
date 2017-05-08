@@ -1,0 +1,44 @@
+@import '~hbc-sass-tools/tools';
+
+.star-rating {
+    display: inline-block;
+    position: relative;
+
+    width: 80px;
+    height: 16px;
+
+    background: url('data:image/gif;base64,R0lGODlhEgASAPUAANzc3N3d3d7e3t/f3+Hh4eLi4uPj4+Tk5OXl5ebm5ufn5+jo6Onp6evr6+zs7O3t7e7u7u/v7/Dw8PLy8vPz8/T09PX19fb29vf39/j4+Pn5+fr6+vv7+/z8/P39/f7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAEgASAAAGWkCQcEgsGouTxnEJYhg4TGNBYIkSK4KAwzpsBL6d42VMnoIx5HJ2wP662+yIEPGuvymfrr0+Rq7tGksPe1CChEwHh2JwC2tyiwMPYUkACR5HdFVEjWhSgZ5DQQA7');
+    background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2016%2016%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22rgb%28221%2C221%2C221%29%22%20points%3D%2216%2C6%209.906%2C6%208%2C0%206.094%2C6%200%2C6%205.018%2C10.145%203.146%2C16%208%2C12.625%2012.854%2C16%2010.982%2C10.145%20%22/%3E%3C/svg%3E'), linear-gradient(transparent, transparent);
+    background-size: auto 16px;
+
+    color: $icon-color-hightlight;
+    font-size: 0;
+    white-space: nowrap;
+
+    overflow: hidden;
+    vertical-align: top;
+
+    &--mini {
+        width: 60px;
+        height: 12px;
+        margin-bottom: 1px;
+        background-size: auto 12px;
+        vertical-align: middle;
+    }
+
+    &__star {
+        position: absolute;
+        left: 0;
+        height: 16px;
+        background: url('data:image/gif;base64,R0lGODlhEgASAPYAAAAAAAEBAQICAgMDAwQEBAYGBgsLCwwMDA0NDQ8PDxAQEBMTEx8fHyAgICIiIicnJygoKCoqKjMzMzQ0NDU1NTk5OTw8PD09PUBAQEJCQk1NTVNTU1VVVVpaWltbW2hoaGpqamxsbG9vb3Z2dnd3d3h4eH19fX5+foWFhYiIiJKSkp6enqCgoKGhoaOjo6urq7CwsLGxsbKysrS0tLy8vL6+vr+/v8DAwMHBwcLCwsXFxcfHx8jIyMnJyc3Nzc/Pz9XV1dbW1tjY2N3d3d7e3uLi4uTk5Obm5ujo6Ovr6+zs7O3t7e7u7u/v7/Ly8vT09Pf39/n5+fz8/P39/f7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAEgASAAAHlIBVgoOCQjqEiIlVLSBTio8eEUWPiUQPBTKUiC8FACJUmoMfAAASSIk+NTerNzEQpAgqOaw2ODMVCAkKuwKkAAa7uw4pVDwXAb7JyQ0uUYUdBMrJEzagg0sjB9IDGkCPJNIZRpQj4U2PSRTSCziPNAqkGBwGpCjfvyVHTyuXGU6JTC5MgOGs0AYGO1CFCALwBItBgQAAOw==');
+        background: url('data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%2216px%22%20height%3D%2216px%22%20viewBox%3D%220%200%2016%2016%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpolygon%20fill%3D%22rgb%280%2C0%2C0%29%22%20points%3D%2216%2C6%209.906%2C6%208%2C0%206.094%2C6%200%2C6%205.018%2C10.145%203.146%2C16%208%2C12.625%2012.854%2C16%2010.982%2C10.145%20%22/%3E%3C/svg%3E'), linear-gradient(transparent, transparent);
+        background-size: auto 16px;
+        z-index: $zindex-just-a-tad;
+
+        &--mini {
+            height: 12px;
+            background-size: auto 12px;
+        }
+    }
+}
+

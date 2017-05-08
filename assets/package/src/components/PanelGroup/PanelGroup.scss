@@ -1,0 +1,13 @@
+@import '~hbc-sass-tools/tools';
+
+.panel-group {
+    @include margin-trailer();
+
+    .panel {
+        margin-bottom: 0;
+
+        &:not(:first-child) .panel__title {
+            border-top: 0;
+        }
+    }
+}

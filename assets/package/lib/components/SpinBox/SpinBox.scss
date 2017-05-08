@@ -1,0 +1,74 @@
+@import '~hbc-sass-tools/tools';
+
+.spinbox {
+    @include clearfix();
+
+    &__increment,
+    &__decrement,
+    &__numerical {
+        width: 36px;
+        float: left;
+        transition: all 150ms ease-in;
+        border: 1px solid $form-default-border;
+        outline: none;
+        background: none;
+        text-align: center;
+        box-shadow: none;
+        @include rem(height, rhythm(2));
+        @include type-scale(text-6);
+
+        &:disabled {
+            border-color: $form-disabled-border;
+            color: $form-disabled-text;
+        }
+    }
+
+    &__increment,
+    &__decrement {
+        cursor: pointer;
+
+        &:enabled:active {
+            background-color: $background-color-tertiary;
+        }
+
+        &:hover {
+            background-color: $background-color-tertiary;
+        }
+    }
+
+    &__increment {
+        border-left-width: 0;
+        border-radius: 0 $form-border-radius $form-border-radius 0;
+    }
+
+    &__decrement {
+        border-right-width: 0;
+        border-radius: $form-border-radius 0 0 $form-border-radius;
+    }
+
+    &__numerical {
+        border-radius: 0;
+        appearance: none;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            margin: 0;
+            appearance: none;
+        }
+
+        &:focus {
+            border-color: $form-default-border-focus;
+        }
+
+        &:hover {
+            border-color: $form-default-border-hover;
+        }
+    }
+
+    &--error {
+
+        .spinbox__numerical {
+            border-color: $form-error-border;
+        }
+    }
+}

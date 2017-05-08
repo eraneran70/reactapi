@@ -1,0 +1,73 @@
+@import '~hbc-sass-tools/tools';
+
+.waiting-spinner {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+
+    &__dot {
+        display: inline-block;
+        border-radius: 50%;
+        vertical-align: top;
+        animation: WaitingSpinnerPulse 1s infinite ease-in-out;
+        @include square(1em);
+
+        &:nth-child(2) {
+            margin-left: 1em;
+            animation-delay: 160ms;
+        }
+
+        &:nth-child(3) {
+            margin-left: 1em;
+            animation-delay: 320ms;
+        }
+    }
+}
+
+.waiting-spinner--default > .waiting-spinner__dot {
+    background-color: $waiting-spinner-dot-bgcolor-default;
+}
+
+.waiting-spinner--primary > .waiting-spinner__dot {
+    background-color: $waiting-spinner-dot-bgcolor-primary;
+}
+
+.waiting-spinner--inverted > .waiting-spinner__dot {
+    background-color: $waiting-spinner-dot-bgcolor-inverted;
+}
+
+.waiting-spinner--small {
+    height: 10px;
+    @include rem(font-size, 10px);
+}
+
+.waiting-spinner--medium {
+    height: 20px;
+    @include rem(font-size, 20px);
+}
+
+.waiting-spinner--large {
+    height: 40px;
+    @include rem(font-size, 40px);
+}
+
+.hbc-button > .waiting-spinner {
+    margin-right: 2em;
+
+    &:only-child {
+        margin-right: 0;
+    }
+}
+
+@keyframes WaitingSpinnerPulse {
+    0%,
+    80%,
+    100% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.6);
+    }
+}

@@ -1,0 +1,44 @@
+@import '~hbc-sass-tools/tools';
+
+.progressive-media {
+    // Make sure wrapper is set to block
+    // Max-width is governed by parentNode
+    display: block;
+    // Intrinsic Ratio Box
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    // Custom Styling
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    &__image,
+    &__no-script {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image {
+        transition: opacity 0.25s ease;
+        opacity: 0;
+
+        &--loaded {
+            opacity: 1;
+        }
+
+        &--error {
+            border: 1px solid $red;
+            opacity: 1;
+        }
+
+        &--default {
+            filter: blur(25px);
+        }
+    }
+}

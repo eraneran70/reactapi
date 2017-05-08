@@ -1,0 +1,79 @@
+@import '~hbc-sass-tools/tools';
+
+.hbc-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.25s ease-out;
+    background-color: rgba(255, 255, 255, 0.98);
+    opacity: 0;
+    z-index: $zindex-modal;
+
+    &--enter {
+        opacity: 1;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    &__dialog {
+        position: relative;
+        width: span(8);
+        max-width: 700px;
+        margin: 0 auto;
+        @include rem(padding, rhythm(4) 0);
+
+        &--full-width {
+            width: span(10);
+            max-width: none;
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    // Bump specificity value to overtake button component
+    &__close-button {
+        position: fixed;
+        @include rem(top, rhythm(1));
+        right: 20px;
+        color: $ui-control-color;
+        z-index: $zindex-just-a-tad;
+        @include adjust-font-size-to(20px, 2);
+
+        &:hover {
+            color: $ui-control-color-hover;
+            cursor: pointer;
+        }
+    }
+}
+
+.framework-responsive .hbc-modal {
+    &__dialog {
+        min-width: auto;
+    }
+
+    &--enter {
+        overflow-x: hidden;
+    }
+}
+
+@include susy-breakpoint($breakpoint-medium-only) {
+    .framework-responsive .hbc-modal {
+        &__dialog {
+            width: span(10);
+            @include rem(padding, rhythm(5) 0);
+        }
+    }
+}
+
+@include susy-breakpoint($breakpoint-small, $layout-small) {
+    .framework-responsive .hbc-modal {
+        &__dialog {
+            width: span(4);
+            @include rem(padding, rhythm(3) 0);
+        }
+    }
+}

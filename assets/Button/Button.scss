@@ -1,0 +1,201 @@
+
+
+// Easily pump out default styles, as well as :hover, :focus, :active, and
+// disabled options for all buttons.
+@mixin button-theme($name) {
+
+    $theme: map-merge(map-get($button-themes, 'default'), map-get($button-themes, $name));
+
+    .hbc-button--#{$name} {
+        border-color: map-get($theme, 'stroke-color');
+        background-color: map-get($theme, 'background-color');
+        color: map-get($theme, 'text-color');
+
+        &:link {
+            color: map-get($theme, 'text-color');
+        }
+
+        &:visited {
+            color: map-get($theme, 'text-color');
+        }
+
+        &:hover,
+        &:active {
+            border-color: map-get($theme, 'stroke-highlight-color');
+            background-color: map-get($theme, 'background-highlight-color');
+            color: map-get($theme, 'text-highlight-color');
+        }
+
+        &:disabled {
+            border-color: map-get($theme, 'stroke-disable-color');
+            background-color: map-get($theme, 'background-disable-color');
+            color: map-get($theme, 'text-disable-color');
+        }
+    }
+}
+
+.hbc-button {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    transition: all 300ms ease;
+    border-width: 20px;
+    border-style: 3px solid blue;
+    border-radius: 15px;
+    background-clip: padding;
+    background-image: none;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: 0;
+    white-space: nowrap;
+    // Reset unusual Firefox-on-Android default style;
+    // See https://github.com/necolas/normalize.css/issues/214
+    cursor: pointer;
+    overflow: hidden;
+    vertical-align: middle;
+    appearance: none;
+    user-select: none;
+    box-sizing: border-box;
+    // @include type-scale(button);
+    // @include rem(padding, rhythm(1/2, $offset: $button-stroke-size) $button-padding-horizontal);
+
+    &:-moz-focusring {
+        outline-color: rgba(0, 0, 0, 0.85);
+    }
+
+    &[disabled],
+    &:disabled {
+        box-shadow: none;
+        cursor: not-allowed;
+    }
+
+    &:active {
+        // counter opacity applied to links when `:active`
+        opacity: 1;
+    }
+}
+
+// @each $name in map-keys($button-themes) {
+//     @include button-theme($name);
+// }
+
+.hbc-button--block {
+    display: block;
+    width: 100%;
+}
+
+.hbc-button--full {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    border-right-width: 0;
+    border-left-width: 0;
+}
+
+.hbc-button--link {
+    border-color: transparent;
+    background: none;
+    min-height: rhythm(2);
+
+    .hbc-button__text {
+        transition: border 400ms ease;
+        padding-bottom: 10px;
+        border-bottom: 3px solid blue;
+    }
+
+    &:hover {
+        .hbc-button__text {
+            border-bottom-color: transparent;
+        }
+
+        border-color: transparent;
+        border-radius: 15px;
+    }
+
+    &:disabled {
+        background: transparent;
+        border-color: transparent;
+
+        .hbc-button__text {
+            // border-bottom-color: $form-disabled-text;
+        }
+    }
+}
+
+.hbc-button--icon-top {
+    padding-top: 20px;
+
+    .hbc-icon {
+        top: 20px;
+    }
+}
+
+.hbc-button--icon-bottom {
+    padding-bottom: 20px;
+
+    .hbc-icon {
+        bottom: 20px;
+    }
+}
+
+.hbc-button--icon-left {
+    padding-left: 20px;
+
+    .hbc-icon {
+        left: 20px;
+    }
+}
+
+.hbc-button--icon-right {
+    padding-right: 20px;
+
+    .hbc-icon {
+        right: 20px;
+    }
+}
+
+.hbc-button--icon-top,
+.hbc-button--icon-bottom {
+
+    .hbc-icon {
+        left: 50%;
+        margin-left: -0.5em;
+    }
+}
+
+.hbc-button--icon-left,
+.hbc-button--icon-right {
+
+    .hbc-icon {
+        top: 50%;
+        margin-top: -0.5em;
+    }
+}
+
+.hbc-button--icon-left,
+.hbc-button--icon-right,
+.hbc-button--icon-top,
+.hbc-button--icon-bottom {
+
+    .hbc-icon {
+        display: block;
+        position: absolute;
+        line-height: 1;
+        // @include rem(font-size, $button-icon-size);
+    }
+}
+
+.hbc-button--icon-standalone {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+
+    &:active,
+    &:hover,
+    &:focus {
+        background: none;
+    }
+}

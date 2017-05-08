@@ -1,0 +1,39 @@
+@import '~hbc-sass-tools/tools';
+
+.back-to-top-button {
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    width: 33px;
+    height: 32px;
+    transform: translate3d(0, 40px, 0);
+    transition: transform 0.15s ease-in-out 0.1s;
+    border: 1px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+
+    &--active {
+        transform: translate3d(0, -22px, 0);
+        transition: transform 0.15s ease-in-out 0.1s;
+        background-color: #fff;
+        opacity: 0.9;
+
+        &:hover {
+            border: 1px solid #fff;
+            background-color: #000;
+            color: #fff;
+
+            .hbc-icon {
+                color: #fff;
+            }
+        };
+    }
+
+    .hbc-icon {
+        transform: rotate(180deg);
+        color: #000;
+    }
+}
+
+

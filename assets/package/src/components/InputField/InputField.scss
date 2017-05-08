@@ -1,0 +1,71 @@
+@import '~hbc-sass-tools/tools';
+
+.input-field {
+    @include type-scale(base);
+
+    &__input-element {
+        width: 100%;
+        padding: 0 11px;
+        border: 1px solid $form-default-border;
+        border-radius: $form-border-radius;
+        outline: none;
+        @include rem(height, rhythm(2));
+        @include type-scale(base);
+
+        &:focus {
+            border-color: $form-default-border-focus;
+        }
+
+        &:hover {
+            border-color: $form-default-border-hover;
+        }
+    }
+
+    &__label {
+        position: relative;
+        color: $typography-color-secondary;
+        @include type-scale(base);
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 110%;
+        left: 12px;
+        transform: translate3d(0, -100%, 0) scale(1);
+        transition-duration: 0.25s;
+        transition-property: transform;
+        transition-timing-function: ease-out;
+        background-color: $form-default-background;
+        pointer-events: none;
+
+        &--as-header {
+            padding: 0 6px;
+            transform: translate3d(-13.5%, -200%, 0) scale(0.8);
+            background-color: $form-default-background;
+            color: $typography-color-default;
+        }
+
+        &--as-adalabel {
+            visibility: hidden;
+        }
+    }
+
+    &__error-message {
+        display: block;
+        padding: 0 11px;
+        color: $typography-color-error;
+        @include adjust-leading-to(1.5);
+    }
+
+    &--with-error {
+        .input-field__input-element {
+            border-color: $form-error-border;
+        }
+
+        .input-field__placeholder {
+            &--as-header {
+                color: $typography-color-error;
+            }
+        }
+    }
+}
